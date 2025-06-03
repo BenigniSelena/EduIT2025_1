@@ -14,7 +14,6 @@ public class BallBehaviour : MonoBehaviour
         myRigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         moveObject = Vector3.zero;
@@ -37,8 +36,8 @@ public class BallBehaviour : MonoBehaviour
             }
         }
 
-        Vector3 myPos = transform.position;
-        myPos += moveObject.normalized * speed * Time.deltaTime;
-        transform.position = myPos;
+        Vector3 objectPosition = transform.position;
+        objectPosition += moveObject.normalized * speed * Time.deltaTime;
+        transform.position = objectPosition;
     }
 }
