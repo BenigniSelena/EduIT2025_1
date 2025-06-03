@@ -2,10 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ballBehaviour : MonoBehaviour
+public class BallBehaviour : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    private Rigidbody myRigidbody;
+    private Transform myTransform;
+
+    private void Start()
     {
-        print("Ganaste un punto!");
+        myRigidbody = this.gameObject.GetComponent<Rigidbody>();
+        myTransform = this.gameObject.GetComponent<Transform>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            myRigidbody.useGravity = true;
+        }
     }
 }
