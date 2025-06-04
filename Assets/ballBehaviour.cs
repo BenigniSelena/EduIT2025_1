@@ -19,7 +19,13 @@ public class BallBehaviour : MonoBehaviour
         initialPosition = myTransform.position;
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Ganaste un punto!");
+        other.gameObject.SetActive(false);
+    }
+
+    private void Update()
     {
         moveObject = Vector3.zero;
 
